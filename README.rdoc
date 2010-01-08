@@ -1,6 +1,37 @@
-= txprails
+= TXPRrails
 
-Description goes here.
+*DISCLAIMER:*
+
+TXPRails born kind of a experiment. Please be aware that this is a work in
+progress.
+
+= TXPRails = TextPattern Rails
+
+This gem is a experiment for using TextPattern like templates in a Rails
+environment. Rails have many template engines available, from ERB thru Haml,
+etc. However, for many of us from a more traditional PHP/like environment,
+XML-style templates seems more natural. Moreover, Txp style templates differ
+from Haml or ERB in one thing: the templates are not "compiled" in the sense
+of making 1 pre-compile pass (Haml) or more-or-less-directly ruby-executed
+(ERB). Txp templates are executed while parsing, using different techniques
+explained below.
+
+I think Haml is kind of awesome, and I'm slowly getting used to it. However,
+I'm still fascinated of the elegance and simplicity of TXP XML'ish templates.
+
+So, in essence, I started this project solely for this pourposes:
+
+* Try to make my first publicy available Ruby GEM.
+* Test and experience the C/C++ binding of Ruby. (TXPRails is more or less
+  80% written in C++).
+* Learn and practice myself some advanced Rails techniques.
+* Just for fun... :-)
+
+*This project and some of the code (namely the Rails plugin bootstrat) is
+heavily inspired by Haml itself.*
+
+Please, PLEASE, if you find this gem useful, comment and make suggestions to make it better. I think you may also benefit and learn from TXPRails.
+
 
 == Note on Patches/Pull Requests
  
@@ -9,9 +40,11 @@ Description goes here.
 * Add tests for it. This is important so I don't break it in a
   future version unintentionally.
 * Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+  (if you want to have your own version, that is fine but bump version in a
+  commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
 == Copyright
 
-Copyright (c) 2010 Jose Miguel Perez. See LICENSE for details.
+Copyleft (c) 2010 Jose Miguel Perez. Do not see LICENSE for no details.
+
