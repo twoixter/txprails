@@ -9,9 +9,11 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jose Miguel P\303\251rez Ruiz"]
-  s.date = %q{2010-01-08}
+  s.date = %q{2010-01-09}
+  s.default_executable = %q{txprails}
   s.description = %q{TXPRails is a template engine based on TextPattern for Rails.}
   s.email = %q{josemiguel@perezruiz.com}
+  s.executables = ["txprails"]
   s.extensions = ["ext/txparse/extconf.rb"]
   s.extra_rdoc_files = [
     "LICENSE",

@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+# Command line utility for TXPRails
+
+$LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
+require 'txprails'
+require 'txprails/commands'
+
+opts = TXPRails::Commands.new(ARGV)
+opts.parse!

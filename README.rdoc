@@ -21,13 +21,13 @@ I'm still fascinated of the elegance and simplicity of TXP XML'ish templates.
 
 So, in essence, I started this project solely for this pourposes:
 
-* Try to make my first publicy available Ruby GEM.
+* Try to make my first publicy available Ruby Gem.
 * Test and experience the C/C++ binding of Ruby. (TXPRails is more or less
   80% written in C++).
 * Learn and practice myself some advanced Rails techniques.
 * Just for fun... :-)
 
-*This project and some of the code (namely the Rails plugin bootstrat) is
+*This project and some of the code (namely the Rails plugin bootstrap) is
 heavily inspired by Haml itself.*
 
 Please, PLEASE, if you find this gem useful, comment and make suggestions to make it better. I think you may also benefit and learn from TXPRails.

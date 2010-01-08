@@ -129,3 +129,8 @@ extern "C" void Init_TXParse()
 	
 	Init_TXParseTag();
 }
+
+extern "C" void Init_txparse()
+{
+	Init_TXParse();
+}

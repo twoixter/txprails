@@ -61,14 +61,5 @@ orig = %{
 }
 
 txt = txp.parse(orig)
-# do |tag|
-#   puts "Nombre: [" + tag.name + "]"
-#   puts "Domain: [" + tag.domain + "]"
-#   tag.attr.each do |x|
-#     p x
-#   end unless tag.attr.size == 0
-# 
-#   tag.orig.gsub(/</, "[").gsub(/>/, "]")
-# end
 
 puts txt

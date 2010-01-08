@@ -1,2 +1,2 @@
-require 'TXPRails/TXParse'
-
+require 'txprails/txparse'
+require 'txprails/version'
