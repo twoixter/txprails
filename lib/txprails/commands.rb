@@ -18,9 +18,6 @@ module TXPRails
       begin
         @opts = OptionParser.new(&method(:set_opts))
         @opts.parse!(@args)
-
-        process_result
-
         @options
       rescue Exception => e
         raise e if e.is_a?(SystemExit)
@@ -55,9 +52,37 @@ module TXPRails
         puts("TXPRails #{::TXPRails.version[:string]}")
         exit
       end
+
+      opts.on('--rails RAILS_DIR', "Install TXPRails from the Gem to a Rails project") do |dir|
+        original_dir = dir
+        dir = File.join(dir, 'vendor', 'plugins')
+        unless File.exists?(dir)
+          puts "Directory #{dir} doesn't exist"
+          exit
+        end
+
+        dir = File.join(dir, 'txprails')
+        if File.exists?(dir)
+          print "Directory #{dir} already exists, overwrite [y/N]? "
+          exit if gets !~ /y/i
+          FileUtils.rm_rf(dir)
+        end
+
+        begin
+          Dir.mkdir(dir)
+        rescue SystemCallError
+          puts "Cannot create #{dir}"
+          exit
+        end
+
+        File.open(File.join(dir, 'init.rb'), 'w') do |file|
+          file << File.read(File.dirname(__FILE__) + "/../init_rails.rb")
+        end
+
+        puts "Haml plugin added to #{original_dir}"
+        exit
+      end
     end
 
-
   end
-  
 end

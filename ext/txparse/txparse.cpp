@@ -101,8 +101,11 @@ VALUE txp_parse_private(
 					}
 				}
 
+				VALUE domain   = rb_iv_get(tag, "@domain");
 				VALUE tag_name = rb_iv_get(tag, "@name");
-				VALUE tmp = rb_funcall2(self, rb_intern(StringValueCStr(tag_name)), 1, &tag);
+				rb_str_append(domain, rb_str_new2("_"));
+				rb_str_append(domain, tag_name);
+				VALUE tmp = rb_funcall2(self, rb_intern(StringValueCStr(domain)), 1, &tag);
 				// VALUE tmp = rb_yield(tag);
 
 				if (!NIL_P(tmp)) rb_str_append(ret, tmp);
