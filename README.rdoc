@@ -1,23 +1,24 @@
 = TXPRrails
 
-*DISCLAIMER:*
+*DISCLAIMER*
 
-TXPRails born kind of a experiment. Please be aware that this is a work in
-progress.
+TXPRails was born kind of an experiment. Please be aware that this is a work
+in progress.
 
-= TXPRails = TextPattern Rails
+= TXPRails = Textpattern Rails
 
-This gem is a experiment for using TextPattern like templates in a Rails
+This gem is an experiment for using *Textpattern* like templates in a Rails
 environment. Rails have many template engines available, from ERB thru Haml,
 etc. However, for many of us from a more traditional PHP/like environment,
-XML-style templates seems more natural. Moreover, Txp style templates differ
+XML-style templates seems more natural. Moreover, TXP style templates differ
 from Haml or ERB in one thing: the templates are not "compiled" in the sense
 of making 1 pre-compile pass (Haml) or more-or-less-directly ruby-executed
-(ERB). Txp templates are executed while parsing, using different techniques
+(ERB). TXP templates are executed while parsing, using different techniques
 explained below.
 
 I think Haml is kind of awesome, and I'm slowly getting used to it. However,
 I'm still fascinated of the elegance and simplicity of TXP XML'ish templates.
+Liquid template fans will also find TXP templates very easy to use.
 
 So, in essence, I started this project solely for this pourposes:
 
@@ -28,9 +29,46 @@ So, in essence, I started this project solely for this pourposes:
 * Just for fun... :-)
 
 *This project and some of the code (namely the Rails plugin bootstrap) is
-heavily inspired by Haml itself.*
+heavily inspired by Haml itself*. Also, there is also some influence of the
+*fluid* template engine.
 
-Please, PLEASE, if you find this gem useful, comment and make suggestions to make it better. I think you may also benefit and learn from TXPRails.
+Please, PLEASE, if you find this gem useful, comment and make suggestions to
+make it better. I think you may also benefit and learn from TXPRails.
+
+
+= EXAMPLES
+
+TextPattern syntax templates have an extension of +.txp+, you can rename all
+your templates to use +.txp* extension and will use TXPRails as template
+engine.
+
+Please, read the {manual for Textpattern tags}[http://textpattern.net/wiki/index.php?title=Tag_Basics]
+to get the basics.
+
+Textpattern tags are XML. There are two kind of tags: Self referenced and
+container tags. Self referenced tags are XML self-closed tags like
++<txp:content />+. Container tags, on the other hand, have a block of text
+between the the tag pair like: +<txp:link to="destination"> ...blah,
+blah...</txp:link>+.
+
+Pay close attention to self-closed tags. They have a forward slash at the end,
+exactly like XHTML tags.
+
+Textpattern tags have a "domain" and "name" part, like this: +<domain:name />+. The Domain part plays an important role in TXPRails, unlike in
+Textpattern where they are simply "sintactic sugar".
+
+= Differences from Textpattern
+
+Template Tags in the Textpattern publishing system are very tight coupled. For
+example, tags like +<txp:permlink />+ requires to have a blog, a post and this
+post have a permalink. This is not the case with TXPRails, in which we
+obviously haven't a blog. In Rails we have Models:
+
+    <mod:clients limit="5">
+      The name: <var:name /><br />
+      The phone: <var:phone /><br />
+      <txp:link>View more</txp:link>
+    </mod:clients>
 
 
 == Note on Patches/Pull Requests

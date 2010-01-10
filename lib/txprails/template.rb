@@ -9,12 +9,13 @@ module TXPRails
 
     def initialize(view)
       @view = view
+      @_current_models = []
     end
-    
+
     def render(template, local_assigns = {})
       parse(template.source)
     end
-    
+
     def compilable?
       false
     end
